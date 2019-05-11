@@ -24,7 +24,9 @@ class MyApp6(QMainWindow):
         self.statusBar()
 
         menubar = self.menuBar()
+        # macOS에서는 메뉴바를 다르게 다루는데, 아래 예제에서 볼 수 있듯이 한 줄의 코드(menubar.setNativeMenuBar(False))를 추가함으로써 macOS에서도 Windows 환경과 동일한 결과를 얻을 수 있습니다.
         menubar.setNativeMenuBar(False)
+        #&는 앰퍼샌드는 간편하게 단축키를 설정하게해줌 F앞에 &가있으므로 'Alt+F'가 메뉴의 단축기가됨
         fileMenu = menubar.addMenu('&File')
         fileMenu.addAction(exitAction)
         """
