@@ -1,4 +1,7 @@
-from PyQt5.QtCore import QDate, Qt, QTime
+import sys
+from PyQt5.QtCore import QDate, Qt, QTime, QDateTime
+
+from PyQt5.QtWidgets import QApplication, QMainWindow
 
 #현재날짜
 now = QDate.currentDate()
@@ -27,10 +30,35 @@ print(time.toString())
 print(time.toString('h.m.s'))
 #23:55:23
 print(time.toString('hh.mm.ss'))
-#23.55.23.934
+#23.55.23.934, z는 1000분의 1초를 나타냅니다.
 print(time.toString('hh.mm.ss.zzz'))
 #오후 11:55:23
 print(time.toString(Qt.DefaultLocaleLongDate))
 #오후 11:55
 print(time.toString(Qt.DefaultLocaleShortDate))
 
+#33,35도 15,17과 마찬가지로 시간을나타낼수있다.
+
+datetime = QDateTime.currentDateTime()
+print("\n",datetime.toString())
+
+class MyApp9():
+
+    def __init__(self):
+
+        super().__init__()
+        self.date = QDate.currentDate()
+        self.initUI()
+
+    def initUI(self):
+
+        self.statusBar().showMessage(self.date.toString(Qt.DefaultLocaleLongDate))
+
+        self.setWindowTitle('Date')
+        self.setGeometry(300,300,400,200)
+        self.show()
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MyApp9()
+    sys.exit(app.exec_())
