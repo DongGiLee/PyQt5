@@ -42,7 +42,7 @@ print(time.toString(Qt.DefaultLocaleShortDate))
 datetime = QDateTime.currentDateTime()
 print("\n",datetime.toString())
 
-class MyApp9():
+class MyApp9(QMainWindow):
 
     def __init__(self):
 
