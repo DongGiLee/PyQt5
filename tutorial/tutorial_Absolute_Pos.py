@@ -10,6 +10,7 @@ class MyApp11(QWidget):
 
     def initUI(self):
 
+        # 좌표는 왼쪽상단에서 부터시작한다.
         label1 = QLabel('라벨',self)
         label1.move(20,20)
         label2 = QLabel('라벨2',self)
